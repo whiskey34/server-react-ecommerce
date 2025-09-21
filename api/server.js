@@ -6,13 +6,13 @@ import cors from "cors";
 dotenv.config();
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "https://react-ecommerce-three-inky.vercel.app" }));
 
-app.options("*", (req, res) => {
-  res.header("Access-Control-Allow-Origin", "https://react-ecommerce-three-inky.vercel.app");
-  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Content-Type");
-  res.sendStatus(200);
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://react-ecommerce-three-inky.vercel.app");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  if (req.method === "OPTIONS") return res.sendStatus(200);
+  next();
 });
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);

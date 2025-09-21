@@ -23,8 +23,8 @@ app.post("/api/create-checkout-session", async (req, res) => {
         },
         quantity: item.quantity,
       })),
-      success_url: "http://localhost:5173/success",
-      cancel_url: "http://localhost:5173/cancel",
+      success_url: "https://react-ecommerce-three-inky.vercel.app/success",
+      cancel_url: "https://react-ecommerce-three-inky.vercel.app/cancel",
     });
 
     res.json({ url: session.url });

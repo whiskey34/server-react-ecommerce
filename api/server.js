@@ -34,4 +34,4 @@ app.post("/api/create-checkout-session", async (req, res) => {
   }
 });
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+export default serverless(app);

@@ -15,6 +15,7 @@
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "midtrans-client": "^1.4.3",
+    "serverless-http": "^4.0.0",
     "stripe": "^18.5.0"
   }
 }

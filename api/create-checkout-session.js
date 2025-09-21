@@ -2,6 +2,8 @@ import express from "express";
 import Stripe from "stripe";
 import dotenv from "dotenv";
 import cors from "cors";
+import serverless from "serverless-http";
+
 
 dotenv.config();
 const app = express();
